@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Mortgage Calculator</title>
+</head>
+
+<body>
+    <section class="calculator">
+        <div class="container">
+            <div class="calculator-header">
+                <h2 class="calculator-header__title">Калькулятор ипотеки на чистом JavaScript</h2>
+                <div class="calculator__counter">
+                    <div class="calculator__counter-item">
+                        <span class="calculator__counter-item-title">Ставка от</span>
+                        <span class="calculator__counter-item-number" data-value="0.091">9.1%</span>
+                    </div>
+                    <div class="calculator__counter-item">
+                        <span class="calculator__counter-item-title">Первый взнос от</span>
+                        <span data-value="0.091" class="calculator__counter-item-number">10%</span>
+                    </div>
+                    <div class="calculator__counter-item">
+                        <span class="calculator__counter-item-title">Месячный платеж от</span>
+                        <span id="input-range-initialPayment-from" data-value="0.091"
+                            class="calculator__counter-item-number">304 579 ₽</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="calculator-wrapper">
+            <h3 class="calculator-title">Ипотечный калькулятор</h3>
+            <div class="calculator-sliders">
+                <div class="calculator-sliders__item">
+                    <span class="calculator-sliders-title">Стоимость недвижимости</span>
+                    <div class="calculator-slider__inner">
+                        <input class="value-input" id="input-counter-price" type="text" value="40 000 000"
+                            data-unit="₽">
+                        <div class="calculator-slider">
+                            <input class="calculator-slider__range" id="input-range-price" type="range" min="40000000"
+                                max="441780000" value="0" name="range" step="100000">
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-sliders__item">
+                    <span class="calculator-sliders-title">Первоначальный взнос</span>
+                    <div class="calculator-slider__inner">
+                        <input class="value-input" id="input-counter-initialPayment" type="text" value="8 000 000"
+                            data-unit="₽">
+                        <div class="calculator-slider">
+                            <input class="calculator-slider__range" id="input-range-initialPayment" type="range"
+                                min="4000000" max="441730000" value="0" name="range" step="1000">
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-sliders__item">
+                    <span class="calculator-sliders-title">Срок до</span>
+                    <div class="calculator-slider__inner">
+                        <input class="value-input" value="25 лет" id="input-counter-years" type=" text" data-unit="₽">
+                        <div class="calculator-slider">
+                            <input class="calculator-slider__range" id="input-range-years" type="range" min="1" max="25"
+                                value="25" name="range" step="1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="calculator__table">
+                <thead>
+                    <tr>
+                        <th id="text-align-left">Банки</th>
+                        <th>Первоначальный взнос</th>
+                        <th>Месячный платеж</th>
+                        <th class="text-align-right">Процентная ставка</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="calculator__table-item" data-firstpay="0.1" data-percent="0.093">
+                        <td id="text-align-left">
+                            <img class="fast_background" style="width: 130px;" src="images/sberbank.svg">
+                        </td>
+                        <td>10%</td>
+                        <td class="input-counter-price-bank" id="input-counter-price-sber-bank"></td>
+                        <td class="text-align-right">9.3%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
